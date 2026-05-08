@@ -1,0 +1,47 @@
+name: Build Automation Pipeline
+
+# Automatic execution on every push or pull request
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    name: Build, Test and Static Analysis
+    runs-on: ubuntu-latest
+    
+    # Specify the working directory where the pom.xml is located
+    defaults:
+      run:
+        working-directory: ./roman-number
+
+    steps:
+      # Access repository content
+      - name: CHECKOUT REPOSITORY
+        uses: actions/checkout@v4
+
+      # JDK configuration (LTS 17)
+      - name: JDK SETUP
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      # Compile source code
+      - name: COMPILATION
+        run: mvn compile
+
+      # Run all unit tests
+      - name: UNIT TESTING
+        run: mvn test
+
+      # Run Checkstyle analysis
+      - name: STATIC CODE ANALYSIS
+        run: mvn package -DskipTests  # -DskipTests is used to avoid redundant test execution
+
+      # Generate JaCoCo report and upload to Coveralls
+      - name: CODE COVERAGE
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+        run: mvn jacoco:report coveralls:report
