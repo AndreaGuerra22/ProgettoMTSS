@@ -12,12 +12,12 @@ public class RomanPrinter {
     private static String printAsciiArt(String romanNumber) {
         // Define I print
         String[] i = {
-            " _____ ", 
-            "|_   _|", 
-            "  | |  ",
-            "  | |  ", 
-            " _| |_ ", 
-            "|_____|"
+            " _____  ", 
+            "|_   _| ", 
+            "  | |   ",
+            "  | |   ", 
+            " _| |_  ", 
+            "|_____| "
         };
 
         StringBuilder result = new StringBuilder();
