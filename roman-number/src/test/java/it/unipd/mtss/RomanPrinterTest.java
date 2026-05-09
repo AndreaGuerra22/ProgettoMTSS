@@ -25,21 +25,41 @@ public class RomanPrinterTest {
     }
 
     @Test
-    public void testPrintThree() {
-        // Arrange
-        int number = 3;
+    public void testPrintFour() {
+        int number = 4;
         String expected = 
-            " _____   _____   _____  \n" +
-            "|_   _| |_   _| |_   _| \n" +
-            "  | |     | |     | |   \n" +
-            "  | |     | |     | |   \n" +
-            " _| |_   _| |_   _| |_  \n" +
-            "|_____| |_____| |_____| \n";
+            " _____  __    __\n" +
+            "|_   _| \\ \\  / /\n" +
+            "  | |    \\ \\/ / \n" +
+            "  | |     \\  /  \n" +
+            " _| |_     \\/   \n" +
+            "|_____|         \n";
+        assertEquals(expected, RomanPrinter.print(number));
+    }
 
-        // Act
-        String result = RomanPrinter.print(number);
+    @Test
+    public void testPrintFive() {
+        int number = 5;
+        String expected = 
+            "__    __\n" +
+            "\\ \\  / /\n" +
+            " \\ \\/ / \n" +
+            "  \\  /  \n" +
+            "   \\/   \n" +
+            "        \n";
+        assertEquals(expected, RomanPrinter.print(number));
+    }
 
-        // Assert
-        assertEquals(expected, result);
+    @Test
+    public void testPrintSix() {
+        int number = 6;
+        String expected = 
+            "__    __ _____  \n" +
+            "\\ \\  / /|_   _| \n" +
+            " \\ \\/ /   | |   \n" +
+            "  \\  /    | |   \n" +
+            "   \\/    _| |_  \n" +
+            "        |_____| \n";
+        assertEquals(expected, RomanPrinter.print(number));
     }
 }
