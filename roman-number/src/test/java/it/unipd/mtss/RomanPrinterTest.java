@@ -5,61 +5,49 @@ import static org.junit.Assert.assertEquals;
 
 public class RomanPrinterTest {
 
-    @Test
+   @Test
     public void testPrintOne() {
         // Arrange
-        int number = 1;
-        String expected = 
-            " _____  \n" +
-            "|_   _| \n" +
-            "  | |   \n" +
-            "  | |   \n" +
-            " _| |_  \n" +
-            "|_____| \n";
-
+        int num = 1;
+        String exp = " _____  \n|_   _| \n  | |   \n  | |   \n _| |_  \n|_____| \n";
         // Act
-        String result = RomanPrinter.print(number);
-
+        String res = RomanPrinter.print(num);
         // Assert
-        assertEquals(expected, result);
+        assertEquals(exp, res);
     }
 
     @Test
     public void testPrintFour() {
-        int number = 4;
-        String expected = 
-            " _____  __    __\n" +
-            "|_   _| \\ \\  / /\n" +
-            "  | |    \\ \\/ / \n" +
-            "  | |     \\  /  \n" +
-            " _| |_     \\/   \n" +
-            "|_____|         \n";
-        assertEquals(expected, RomanPrinter.print(number));
+        // Arrange
+        int num = 4;
+        String exp = " _____  __    __\n|_   _| \\ \\  / /\n  | |    \\ \\/ / \n" +
+                     "  | |     \\  /  \n _| |_     \\/   \n|_____|         \n";
+        // Act
+        String res = RomanPrinter.print(num);
+        // Assert
+        assertEquals(exp, res);
     }
 
     @Test
-    public void testPrintFive() {
-        int number = 5;
-        String expected = 
-            "__    __\n" +
-            "\\ \\  / /\n" +
-            " \\ \\/ / \n" +
-            "  \\  /  \n" +
-            "   \\/   \n" +
-            "        \n";
-        assertEquals(expected, RomanPrinter.print(number));
+    public void testPrintNine() {
+        // Arrange
+        int num = 9;
+        String exp = " _____  __    __\n|_   _| \\ \\  / /\n  | |    \\ \\/ / \n" +
+                     "  | |    / /\\ \\ \n _| |_  / /  \\ \\\n|_____| \\/    \\/\n";
+        // Act
+        String res = RomanPrinter.print(num);
+        // Assert
+        assertEquals(exp, res);
     }
 
     @Test
-    public void testPrintSix() {
-        int number = 6;
-        String expected = 
-            "__    __ _____  \n" +
-            "\\ \\  / /|_   _| \n" +
-            " \\ \\/ /   | |   \n" +
-            "  \\  /    | |   \n" +
-            "   \\/    _| |_  \n" +
-            "        |_____| \n";
-        assertEquals(expected, RomanPrinter.print(number));
+    public void testPrintTen() {
+        // Arrange
+        int num = 10;
+        String exp = "__    __\n\\ \\  / /\n \\ \\/ / \n / /\\ \\ \n/ /  \\ \\\n\\/    \\/\n";
+        // Act
+        String res = RomanPrinter.print(num);
+        // Assert
+        assertEquals(exp, res);
     }
 }

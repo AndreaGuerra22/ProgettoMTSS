@@ -4,26 +4,15 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class IntegerToRomanTest {
+    
     @Test
     public void testConvertOne() {
         // Arrange
         int number = 1;
-
-        String result = IntegerToRoman.convert(number);
-
-        assertEquals("I", result);
-    }
-
-    @Test
-    public void testConvertThree() {
-        // Arrange
-        int number = 3;
-        
         // Act
         String result = IntegerToRoman.convert(number);
-
         // Assert
-        assertEquals("III", result);
+        assertEquals("I", result);
     }
 
     @Test
@@ -54,5 +43,25 @@ public class IntegerToRomanTest {
         String result = IntegerToRoman.convert(number);
         // Assert
         assertEquals("VI", result);
+    }
+
+    @Test
+    public void testConvertNine() {
+        // Arrange
+        int number = 9;
+        // Act
+        String result = IntegerToRoman.convert(number);
+        // Assert
+        assertEquals("IX", result);
+    }
+
+    @Test
+    public void testConvertTen() {
+        // Arrange
+        int number = 10;
+        // Act
+        String result = IntegerToRoman.convert(number);
+        // Assert
+        assertEquals("X", result);
     }
 }
