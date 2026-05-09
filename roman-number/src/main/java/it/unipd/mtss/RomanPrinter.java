@@ -10,7 +10,6 @@ public class RomanPrinter {
     }
 
     private static String printAsciiArt(String romanNumber) {
-        // Define I print
         String[] i = {
             " _____  ", 
             "|_   _| ", 
@@ -20,14 +19,24 @@ public class RomanPrinter {
             "|_____| "
         };
 
+        String[] v = {
+            "__    __", 
+            "\\ \\  / /", 
+            " \\ \\/ / ",
+            "  \\  /  ", 
+            "   \\/   ", 
+            "        "
+        };
+
         StringBuilder result = new StringBuilder();
 
-        //Test for only first 3 numbers
         for (int row = 0; row < 6; row++) {
             for (int j = 0; j < romanNumber.length(); j++) {
                 char c = romanNumber.charAt(j);
                 if (c == 'I') {
                     result.append(i[row]);
+                } else if (c == 'V') {
+                    result.append(v[row]);
                 }
             }
             result.append("\n");
