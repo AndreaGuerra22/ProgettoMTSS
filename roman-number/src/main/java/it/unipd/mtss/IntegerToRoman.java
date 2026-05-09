@@ -5,9 +5,9 @@
 package it.unipd.mtss;
 
 public class IntegerToRoman {
-    //Conversion first 10 numbers
+    //Conversion first 20 numbers
     public static String convert(int number) {
-        if (number < 1 || number > 10) {
+        if (number < 1 || number > 20) {
             return null;
         }
         
