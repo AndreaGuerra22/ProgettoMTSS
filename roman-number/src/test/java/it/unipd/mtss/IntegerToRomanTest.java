@@ -2,6 +2,7 @@ package it.unipd.mtss;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class IntegerToRomanTest {
     
@@ -63,5 +64,43 @@ public class IntegerToRomanTest {
         String result = IntegerToRoman.convert(number);
         // Assert
         assertEquals("X", result);
+    }
+
+    @Test
+    public void testConvertTwenty() {
+        // Arrange
+        int number = 20;
+        // Act
+        String result = IntegerToRoman.convert(number);
+        // Assert
+        assertEquals("XX", result);
+    }
+
+    @Test
+    public void testConvertForty() {
+        int num = 40;
+        String res = IntegerToRoman.convert(num);
+        assertEquals("XL", res);
+    }
+
+    @Test
+    public void testConvertFortyNine() {
+        int num = 49;
+        String res = IntegerToRoman.convert(num);
+        assertEquals("XLIX", res);
+    }
+
+    @Test
+    public void testConvertFifty() {
+        int num = 50;
+        String res = IntegerToRoman.convert(num);
+        assertEquals("L", res);
+    }
+
+    @Test
+    public void testConvertOutOfRange() {
+        int num = 51;
+        String res = IntegerToRoman.convert(num);
+        assertNull(res);
     }
 }

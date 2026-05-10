@@ -7,48 +7,68 @@ public class RomanPrinterTest {
 
     @Test
     public void testPrintOne() {
-        int num = 1;
         String exp = " _____  \n|_   _| \n  | |   \n  | |   \n _| |_  \n|_____| \n";
-        assertEquals(exp, RomanPrinter.print(num));
+        assertEquals(exp, RomanPrinter.print(1));
     }
-    
-   @Test
+
+    @Test
     public void testPrintFour() {
-        int num = 4;
         String exp = " _____  __    __\n|_   _| \\ \\  / /\n  | |    \\ \\/ / \n" +
                      "  | |     \\  /  \n _| |_     \\/   \n|_____|         \n";
-        assertEquals(exp, RomanPrinter.print(num));
+        assertEquals(exp, RomanPrinter.print(4));
     }
 
     @Test
     public void testPrintNine() {
-        int num = 9;
         String exp = " _____  __    __\n|_   _| \\ \\  / /\n  | |    \\ \\/ / \n" +
                      "  | |    / /\\ \\ \n _| |_  / /  \\ \\\n|_____| \\/    \\/\n";
-        assertEquals(exp, RomanPrinter.print(num));
+        assertEquals(exp, RomanPrinter.print(9));
     }
 
     @Test
     public void testPrintFourteen() {
-        int num = 14;
-        String exp = "__    __ _____  __    __\n\\ \\  / /|_   _| \\ \\  / /\n \\ \\/ /   | |    \\ \\/ / \n" +
-                     " / /\\ \\   | |     \\  /  \n/ /  \\ \\ _| |_     \\/   \n\\/    \\/|_____|         \n";
-        assertEquals(exp, RomanPrinter.print(num));
+        String exp = "__    __ _____  __    __\n\\ \\  / /|_   _| \\ \\  / /\n" +
+                     " \\ \\/ /   | |    \\ \\/ / \n / /\\ \\   | |     \\  /  \n" +
+                     "/ /  \\ \\ _| |_     \\/   \n\\/    \\/|_____|         \n";
+        assertEquals(exp, RomanPrinter.print(14));
     }
 
     @Test
     public void testPrintNineteen() {
-        int num = 19;
-        String exp = "__    __ _____  __    __\n\\ \\  / /|_   _| \\ \\  / /\n \\ \\/ /   | |    \\ \\/ / \n" +
-                     " / /\\ \\   | |    / /\\ \\ \n/ /  \\ \\ _| |_  / /  \\ \\\n\\/    \\/|_____| \\/    \\/\n";
-        assertEquals(exp, RomanPrinter.print(num));
+        String exp = "__    __ _____  __    __\n\\ \\  / /|_   _| \\ \\  / /\n" +
+                     " \\ \\/ /   | |    \\ \\/ / \n / /\\ \\   | |    / /\\ \\ \n" +
+                     "/ /  \\ \\ _| |_  / /  \\ \\\n\\/    \\/|_____| \\/    \\/\n";
+        assertEquals(exp, RomanPrinter.print(19));
     }
 
     @Test
     public void testPrintTwenty() {
-        int num = 20;
         String exp = "__    ____    __\n\\ \\  / /\\ \\  / /\n \\ \\/ /  \\ \\/ / \n" +
                      " / /\\ \\  / /\\ \\ \n/ /  \\ \\/ /  \\ \\\n\\/    \\/\\/    \\/\n";
-        assertEquals(exp, RomanPrinter.print(num));
+        assertEquals(exp, RomanPrinter.print(20));
+    }
+
+    @Test
+    public void testPrintForty() {
+        String exp = "__    __ _      \n\\ \\  / /| |     \n \\ \\/ / | |     \n" +
+                     " / /\\ \\ | |     \n/ /  \\ \\| |____ \n\\/    \\/|______|\n";
+        assertEquals(exp, RomanPrinter.print(40));
+    }
+
+    @Test
+    public void testPrintFortyNine() {
+        String exp = "__    __ _       _____  __    __\n" +
+                     "\\ \\  / /| |     |_   _| \\ \\  / /\n" +
+                     " \\ \\/ / | |       | |    \\ \\/ / \n" +
+                     " / /\\ \\ | |       | |    / /\\ \\ \n" +
+                     "/ /  \\ \\| |____  _| |_  / /  \\ \\\n" +
+                     "\\/    \\/|______||_____| \\/    \\/\n";
+        assertEquals(exp, RomanPrinter.print(49));
+    }
+
+    @Test
+    public void testPrintFifty() {
+        String exp = " _      \n| |     \n| |     \n| |     \n| |____ \n|______|\n";
+        assertEquals(exp, RomanPrinter.print(50));
     }
 }

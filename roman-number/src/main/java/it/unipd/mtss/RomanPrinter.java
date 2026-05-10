@@ -32,6 +32,15 @@ public class RomanPrinter {
         "\\/    \\/"
     };
 
+    private static final String[] L = {
+        " _      ",
+        "| |     ",
+        "| |     ",
+        "| |     ",
+        "| |____ ",
+        "|______|"
+    };
+
     public static String print(int num) {
         return printAsciiArt(IntegerToRoman.convert(num));
     }
@@ -48,6 +57,8 @@ public class RomanPrinter {
                     result.append(V[row]);
                 } else if (c == 'X') {
                     result.append(X[row]);
+                } else if (c == 'L') {
+                    result.append(L[row]);
                 }
             }
             result.append("\n");
