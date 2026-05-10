@@ -98,8 +98,24 @@ public class IntegerToRomanTest {
     }
 
     @Test
-    public void testConvertOneHundred() {
-        assertEquals("C", IntegerToRoman.convert(100));
+    public void testConvertOnehundred() {
+        int num = 100;
+        String res = IntegerToRoman.convert(num);
+        assertEquals("C", res);
+    }
+
+    @Test
+    public void testConvertFivehundred() {
+        int num = 500;
+        String res = IntegerToRoman.convert(num);
+        assertEquals("D", res);
+    }
+
+    @Test
+    public void testConvertOnethousand() {
+        int num = 1000;
+        String res = IntegerToRoman.convert(num);
+        assertEquals("M", res);
     }
 
     @Test
@@ -114,12 +130,10 @@ public class IntegerToRomanTest {
 
     @Test
     public void testConvertOutOfRange() {
-        int num = 501;
+        int num = 1001; 
         String res = IntegerToRoman.convert(num);
         assertNull(res);
     }
-    
-
     
 
 }
