@@ -5,14 +5,13 @@
 package it.unipd.mtss;
 
 public class IntegerToRoman {
-    //Conversion first 50 numbers
-   public static String convert(int number) {
-        if (number < 1 || number > 50) {
+    public static String convert(int number) {
+        if (number < 1 || number > 100) {
             return null;
         }
         
-        int[] values = {50, 40, 10, 9, 5, 4, 1};
-        String[] symbols = {"L", "XL", "X", "IX", "V", "IV", "I"};
+        int[] values = {100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] symbols = {"C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
         
         StringBuilder result = new StringBuilder();
         int remaining = number;

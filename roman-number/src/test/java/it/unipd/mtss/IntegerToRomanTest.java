@@ -98,9 +98,19 @@ public class IntegerToRomanTest {
     }
 
     @Test
+    public void testConvertOneHundred() {
+        assertEquals("C", IntegerToRoman.convert(100));
+    }
+
+    @Test
     public void testConvertOutOfRange() {
-        int num = 51;
+        int num = 101; 
         String res = IntegerToRoman.convert(num);
         assertNull(res);
     }
+
+    
+
+    
+
 }
