@@ -103,12 +103,21 @@ public class IntegerToRomanTest {
     }
 
     @Test
+    public void testConvertFourHundred() {
+        assertEquals("CD", IntegerToRoman.convert(400));
+    }
+
+    @Test
+    public void testConvertFiveHundred() {
+        assertEquals("D", IntegerToRoman.convert(500));
+    }
+
+    @Test
     public void testConvertOutOfRange() {
-        int num = 101; 
+        int num = 501;
         String res = IntegerToRoman.convert(num);
         assertNull(res);
     }
-
     
 
     
