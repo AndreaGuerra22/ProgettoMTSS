@@ -77,4 +77,16 @@ public class RomanPrinterTest {
         String exp = "  _____  \n / ____| \n| |      \n| |      \n| |____  \n \\_____| \n";
         assertEquals(exp, RomanPrinter.print(100));
     }
+
+    @Test
+    public void testPrintFiveHundred() {
+        String exp = " _____   \n|  __ \\  \n| |  | | \n| |  | | \n| |__| | \n|_____/  \n";
+        assertEquals(exp, RomanPrinter.print(500));
+    }
+
+    @Test
+    public void testPrintFourHundred() {
+    String exp = "  _____   _____   \n / ____| |  __ \\  \n| |      | |  | | \n| |      | |  | | \n| |____  | |__| | \n \\_____| |_____/  \n";
+    assertEquals(exp, RomanPrinter.print(400));
+}
 }

@@ -10,6 +10,7 @@ public class RomanPrinter {
     private static final String[] X = {"__    __","\\ \\  / /"," \\ \\/ / "," / /\\ \\ ","/ /  \\ \\","\\/    \\/"};
     private static final String[] L = {" _      ","| |     ","| |     ","| |     ","| |____ ","|______|"};
     private static final String[] C = {"  _____  "," / ____| ","| |      ","| |      ","| |____  "," \\_____| "};
+    private static final String[] D = {" _____   ","|  __ \\  ","| |  | | ","| |  | | ","| |__| | ","|_____/  "};
 
     public static String print(int num) {
         return printAsciiArt(IntegerToRoman.convert(num));
@@ -21,6 +22,7 @@ public class RomanPrinter {
         if (c == 'X') { return X; }
         if (c == 'L') { return L; }
         if (c == 'C') { return C; }
+        if (c == 'D') { return D; }
         return new String[]{"", "", "", "", "", ""};
     }
 
